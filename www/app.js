@@ -1,24 +1,29 @@
 "use strict";
 
-let todo = {title: "to do", description:"a thing to do", isDone:false};
+// let todoList = [
+//   {title: "to do", description: "a thing to do.", isDone: false},
+//   {title: "to do", description: "a thing to do.", isDone: false},
+//   {title: "to do", description: "a thing to do.", isDone: false},
+//   {title: "to do", description: "a thing to do.", isDone: false},
+//   {title: "to do", description: "a thing to do.", isDone: false},
+//   {title: "to do", description: "a thing to do.", isDone: false},
+//   {title: "to do", description: "a thing to do.", isDone: false}
+// ];
 
-let todoJson = JSON.stringify(todo);
+let todo = {title: "to do", description: "a thing to do.", isDone: false};
 
-localStorage.setItem("todo", todoJson);
-
-function setTodos(todos){
-  let todoJson = JSON.stringify(todos);
-  localStorage.setItem("todos", todoJson);
+function setTodos(todos) {
+  let todoJson = JSON.stringify(todos);    // Convertir la donnée en string (JSON)
+  localStorage.setItem("todos", todoJson); // Enregistrer la donnée convertie dans le localStorage
 }
 
-function getTodos(todos){
-  let todoJson = localStorage.getItem("todos");
-  return JSON.parse(todoJson);
+function getTodos() {
+  let todoJson = localStorage.getItem("todos"); // Récupérer le contenu de la clé "todos" dans le localStorage
+  return JSON.parse(todoJson); // Convertir la donnée JSON en donnée javascript
 }
 
-document.querySelector("form").addEventListener("submit", function(event){
+document.querySelector("form").addEventListener("submit", function(event) {
   let newTodoTitle = document.querySelector("form input[name=title]").value;
   let newTodoDescription = document.querySelector("form input[name=description]").value;
   event.preventDefault();
-  console.log(newTodoTitle, newTodoDescription);
 });
