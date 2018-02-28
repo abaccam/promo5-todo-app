@@ -1,20 +1,57 @@
+.containerRow{
+  display:flex;
+  flex-direction: row;
+}
+.containerCol{
+  display:flex;
+  flex-direction: column;
+}
+#one{
+  justify-content: center;
+/* border:1px solid red; */
+}
+#two{
+  /* justify-content: space-around; */
+  align-items: center;
+  /* border:1px solid blue; */
+  }
+
 ul {
   list-style: none;
-  padding: 0px;
+  padding: 0;
   width: 300px;
 }
 
 li {
-  border:1px solid black;
+  border: 1px solid rgba(73, 67, 0, 0.178);
   display: flex;
   justify-content: space-around;
+  height: 300px;
+  background-color:#FDEC7A;
+  box-shadow: 3px 3px 2px 1px rgba(0, 0, 255, .2);
 }
 
 form input[type=text] {
-  width: 300px;
+  width: 290px;
   display: block;
 }
 
 form input:not([type=text]) {
   width: 150px;
-}  
+}
+
+form input[type=submit]:hover {
+  color: green;
+}
+
+form input[type=button]:hover {
+  color: red;
+}
+
+#postIt{
+justify-content: space-around;
+}
+
+input[type=checkbox]{
+
+}
